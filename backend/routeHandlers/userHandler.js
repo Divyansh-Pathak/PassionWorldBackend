@@ -133,7 +133,7 @@ const sendUser = (req, res) => {
     };
     res.send(currentUser);
   } else {
-    res.send(401);
+    res.json({user : req.user, a: req.isAuthenticated});
   }
 }
 
