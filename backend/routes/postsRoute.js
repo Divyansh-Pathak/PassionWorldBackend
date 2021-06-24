@@ -21,6 +21,10 @@ connection.once('open', () => {
 
 const upload = multer({ storage });
 
+router.get('/', (req, res) => {
+  res.json({server: "Run successFully"})
+})
+
 
 router.post('/uploadProfileImage', upload.single('file'), async (req, res) => {
 
@@ -44,28 +48,6 @@ router.post('/uploadProfileImage', upload.single('file'), async (req, res) => {
 
 });
 
-// @route GET /
-// @desc Loads form
-router.get('/', (req, res) => {
-  gfs.files.find().toArray((err, files) => {
-    // Check if files
-    if (!files || files.length === 0) {
-      res.render('index', { files: false });
-    } else {
-      files.map(file => {
-        if (
-          file.contentType === 'image/jpeg' ||
-          file.contentType === 'image/png'
-        ) {
-          file.isImage = true;
-        } else {
-          file.isImage = false;
-        }
-      });
-      res.render('index', { files: files });
-    }
-  });
-});
 
 
 // @route POST /upload
