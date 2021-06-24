@@ -133,8 +133,9 @@ const sendUser = (req, res) => {
     };
     res.send(currentUser);
   } else {
-    res.json({user : req.user, a: req.isAuthenticated, hello: "bkk sala"});
+    res.json({user : req.user, a: req.isAuthenticated()});
   }
+
 }
 
 //login

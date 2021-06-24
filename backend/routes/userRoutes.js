@@ -38,10 +38,6 @@ router.get('/logout', function (req, res) {
 
 router.get('/user', sendUser);
 
-router.get('/', (req, res) => {
-  res.send("Express is running");
-});
-
 router.get('/login-failure', (req, res) => {
   res.json({ isLoggedIn: false });
 });
