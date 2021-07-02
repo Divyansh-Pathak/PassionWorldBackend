@@ -200,13 +200,13 @@ router.get('/posts', async (req, res) => {
   const defaultChecker = ["Photography", "Reading Books", "Music", "Dance", "Coding", "Computer Science", "Books", "Novels",
   "Sports", "Cricket", "Football", "Travel", "Science", "Mathematics", "Motivation", "Gym", "Technology", "Politics"];
 
-  let checker;
+  let checker = req.user.interests;
   // if(req.isAuthenticated){
   //   checker = req.user.interests;
 
   // }else{
 
-    checker = defaultChecker;
+    // checker = defaultChecker;
 
   // }
   
