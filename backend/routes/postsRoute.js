@@ -212,7 +212,7 @@ router.get('/posts', async (req, res) => {
   
 
 
-  const filter = { tags: { $in: checker } };
+  const filter = { tags: { $in: defaultChecker } };
 
   const post = await Post.find(filter);
 
