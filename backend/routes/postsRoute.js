@@ -214,7 +214,7 @@ router.get('/posts', async (req, res) => {
 
   const filter = { tags: { $in: defaultChecker } };
 
-  const post = await Post.find(filter);
+  const post = await Post.find();
 
   if (!post || post.length === 0) {
     res.status(404).json({
